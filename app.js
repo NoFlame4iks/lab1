@@ -14,9 +14,6 @@ app.set('view engine', 'ejs');
 app.use(expressLayouts); // Увімкнення макетів
 app.set('layout', 'layouts/layout'); // Встановлення основного макета
 
-// Підключення статичних файлів
-app.use(express.static('public'));
-
 // Маршрути
 app.use('/', ecoBlogRoutes); // Підключення маршруту для EcoBlog
 
