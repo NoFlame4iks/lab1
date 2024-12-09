@@ -14,4 +14,10 @@ router.get('/privacy', EcoBlogController.privacyPolicy);
 // Сторінка "Про розробника"
 router.get('/about', EcoBlogController.about);
 
+// Сторінка додавання нової поради
+router.get('/add', EcoBlogController.addItemForm);
+
+// Обробка форми додавання
+router.post('/add', EcoBlogController.createItem);
+
 module.exports = router;

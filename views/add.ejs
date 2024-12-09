@@ -1,0 +1,18 @@
+<section class="p-4">
+    <div class="container">
+        <h1 class="text-center text-success mb-4">Додати нову пораду</h1>
+        <form action="/add" method="POST" class="shadow-lg p-4 bg-white rounded">
+            <div class="mb-3">
+                <label for="title" class="form-label fw-bold">Назва поради</label>
+                <input type="text" class="form-control border-success" id="title" name="title" placeholder="Наприклад: Економія енергії" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label fw-bold">Опис</label>
+                <textarea class="form-control border-success" id="description" name="description" rows="4" placeholder="Детальний опис поради..." required></textarea>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-success px-4">Додати</button>
+            </div>
+        </form>
+    </div>
+</section>

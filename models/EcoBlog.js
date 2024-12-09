@@ -1,16 +1,24 @@
-const posts = [
-    { id: 1, title: 'Сортування сміття', description: 'Розділяйте відходи на папір, пластик та органіку.' },
-    { id: 2, title: 'Енергозбереження', description: 'Вимикайте світло та електроприлади, коли вони не потрібні.' },
-    { id: 3, title: 'Скорочення пластику', description: 'Використовуйте багаторазові сумки та пляшки.' },
-];
-
 class EcoBlog {
+    static items = [
+        { id: 1, title: 'Зменшення використання пластику', description: 'Використовуйте багаторазові сумки.' },
+        { id: 2, title: 'Економія води', description: 'Закривайте кран, коли чистите зуби.' },
+    ];
+
     static getAll() {
-        return posts;
+        return this.items;
     }
 
     static getById(id) {
-        return posts.find(post => post.id === id);
+        return this.items.find(item => item.id === id);
+    }
+
+    static add({ title, description }) {
+        const newItem = {
+            id: this.items.length + 1,
+            title,
+            description,
+        };
+        this.items.push(newItem);
     }
 }
 

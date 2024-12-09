@@ -14,8 +14,25 @@ app.set('view engine', 'ejs');
 app.use(expressLayouts); // Увімкнення макетів
 app.set('layout', 'layouts/layout'); // Встановлення основного макета
 
-// Маршрути
-app.use('/', ecoBlogRoutes); // Підключення маршруту для EcoBlog
+// Масив для зберігання порад
+let items = [
+    { id: 1, title: "Використовуйте багаторазові сумки", description: "Відмовтеся від пластикових пакетів." },
+    { id: 2, title: "Зменшіть використання енергії", description: "Вимикайте світло, коли воно не потрібне." }
+];
+
+// Головна сторінка
+app.get('/', (req, res) => {
+    res.render('index', { items });
+});
+
+// Обробка форми додавання нової поради
+app.post('/add-tip', (req, res) => {
+    const { title, description } = req.body;
+    if (title && description) {
+        items.push({ id: items.length + 1, title, description });
+    }
+    res.redirect('/');
+});
 
 // Запуск сервера
 const PORT = 3000;

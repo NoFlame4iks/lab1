@@ -1,5 +1,20 @@
 <section class="p-4">
     <div class="container-fluid">
+        <h1 class="text-center">Додати нову пораду</h1>
+        <form action="/add-tip" method="POST" class="mb-4">
+            <div class="mb-3">
+                <label for="title" class="form-label">Назва поради</label>
+                <input type="text" id="title" name="title" class="form-control" placeholder="Наприклад, Економте воду" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Опис поради</label>
+                <textarea id="description" name="description" class="form-control" placeholder="Наприклад, закривайте кран під час чищення зубів" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Додати пораду</button>
+        </form>
+    </div>
+
+    <div class="container-fluid">
         <h1 class="text-center">Екологічні поради для кожного</h1>
         <div class="row">
             <div class="list-group">
